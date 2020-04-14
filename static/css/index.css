@@ -1,0 +1,46 @@
+.card-title{
+    background-color: rgb(0, 97, 189);
+    text-align: center;
+    color: white;
+    font-size: larger;
+    font-weight: lighter;
+    
+}
+.card-text{
+    text-align: left;
+}
+.card{
+    margin-right: 20px;
+    background-color: rgb(2, 77, 138);
+    margin-left: 20px;
+  
+}
+#indexcont{
+    margin-top: 20px;
+    margin-right: 20vw;
+    background-color: #2137b6;
+    margin-left: 20vw;
+}
+.hrs{
+    border: 1px solid white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+p {
+    animation-duration: 3s;
+    animation-name: slidein; 
+    color:white;
+    font-weight: bold;
+    
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
