@@ -21,11 +21,17 @@
     margin-left: 5%;
   
 }
+
+
 #indexcont{
     margin-top: 20px;
     margin-right: 20vw;
     background-color:#666699;
     margin-left: 20vw;
+    border-radius: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
 }
 
 #meimage{
