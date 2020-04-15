@@ -35,7 +35,21 @@
 
 }
 
+i.fas,
+i.far,
+i.fab {
+  
+  margin-left: 7vw;
+  color: white;
+  
+}
 
+i.fas,
+i.far:hover,
+i.fab:hover{
+
+  color: black;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -47,6 +61,23 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+  #meimage{
+    width: 240px;
+    height:180px;
+    float: none;
+  }
+  #mepara{
+    margin-left: 0px;
+  }
+  i.fas,
+  i.far,
+  i.fab {
+  margin-left: 12vw;
+  
+}
+
+  
+  
 }
 .hrs{
     border: 1px solid white;

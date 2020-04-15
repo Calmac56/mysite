@@ -3,6 +3,7 @@
 {% block head_block %}
 <link rel="stylesheet" href="{% static "css/index.css"%}" type="text/css">
 <script src="https://kit.fontawesome.com/b931e73ba5.js" crossorigin="anonymous"></script>
+
 {% endblock %}
 {% block body_block %}
 <div id="indexcont">
@@ -34,7 +35,10 @@
 <div class="card">
   <div class="card-body">
       <h5 class="card-title">My Socials</h5>
-      <a href="https://github.com/Calmac56"><i class="fab fa-github fa-5x"></i></a>
+      <a href="https://github.com/Calmac56"><i class="fab fa-github fa-5x" data-toggle="tooltip" title="Github"></i></a>
+      <a href="https://www.linkedin.com/in/calum-macphee-882337a0/"><i class="fab fa-linkedin fa-5x" data-toggle="tooltip" title="LinkedIn"></i></a>
+      <a href="https://twitter.com/mrmacphee2000"><i class="fab fa-twitter-square fa-5x" data-toggle="tooltip" title="Twitter"></i></a>
+      <a href="mailto:cmacphee56@gmail.com"><i class="far fa-envelope fa-5x" data-toggle="tooltip" title="Email"></i></a>
             
 </div>
 </div>
@@ -42,5 +46,9 @@
         
       
 </div>
-
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 {% endblock %}
