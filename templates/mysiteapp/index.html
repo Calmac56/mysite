@@ -2,13 +2,15 @@
 {% load static %}
 {% block head_block %}
 <link rel="stylesheet" href="{% static "css/index.css"%}" type="text/css">
+<script src="https://kit.fontawesome.com/b931e73ba5.js" crossorigin="anonymous"></script>
 {% endblock %}
 {% block body_block %}
 <div id="indexcont">
 <div class="card">
 <div class="card-body">
     <h5 class="card-title">Short About</h5>
-    <p class="card-text">My name is Calum MacPhee. Im a third year Computer Science student at the University of Glasgow. Welcome to the website that I have created.
+    <img id="meimage" src="{% static "images/me.jpg"%}">
+    <p class="card-text" id="mepara">  My name is Calum MacPhee. Im a third year Computer Science student at the University of Glasgow. Welcome to the website that I have created.
       I mainly created this site for fun and to demonstrate my skills but here you will also be able to find the projects I have been apart of and a bit more about me.
     </p>
     
@@ -19,12 +21,26 @@
 <div class="card">
 <div class="card-body">
     <h5 class="card-title">Programming languages I have used</h5>
-    <p class="card-text">My name is Calum MacPhee. Im a third year Computer Science student at the University of Glasgow.</p>
+    <p class="card-text">I have used various programming languages such as: </p>
+      <li>Python</li>
+      <li>Java</li>
+
+
     
   
 </div>
 </div>
 <hr class="hrs">
+<div class="card">
+  <div class="card-body">
+      <h5 class="card-title">My Socials</h5>
+      <a href="https://github.com/Calmac56"><i class="fab fa-github fa-5x"></i></a>
+            
+</div>
+</div>
+        
+        
+      
 </div>
 
 {% endblock %}
