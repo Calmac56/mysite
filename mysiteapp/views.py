@@ -5,3 +5,6 @@ from django.shortcuts import HttpResponse
 
 def index(request):
     return render(request, 'mysiteapp/index.html')
+
+def project(request):
+    return render(request, 'mysiteapp/projects.html')
