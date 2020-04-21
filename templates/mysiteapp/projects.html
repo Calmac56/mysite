@@ -8,7 +8,28 @@
 			
                $.getJSON('https://api.github.com/users/Calmac56/repos', function(jd) {
                    console.log(jd[0].name);
-            
+                   var length = jd.length;
+                   var names = [];
+                   var creatondates = [];
+                   var modifieds = [];
+                   var link = 'https://api.github.com/repos/Calmac56/';
+                   var endlink = '/languages'
+
+                   for(var i= 0; i < length; i++){
+                       names.push(jd[i].name);
+                       console.log(names);
+                       var langlink = link + jd[i].name + endlink
+                       $.getJSON(langlink, function(s){
+                           console.log(s);
+                   });
+                   }
+                   $.ajax({
+                        url: "/poll/score/",
+                        type:"GET",
+                        data: {name:names}
+                    }).done(function(data){
+                         alert("Projects downloaded");//do what you want to do with response
+                 });
             });
         });
 </script>
