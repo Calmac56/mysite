@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from mysiteapp.models import Language, Projects
 
 # Create your views here.
 
@@ -8,3 +9,22 @@ def index(request):
 
 def project(request):
     return render(request, 'mysiteapp/projects.html')
+
+def getprojects(request):
+    projnames = request.GET.getlist('name[]', None)
+    projcreations = request.GET.getlist('creation[]', None)
+    projmodified = request.GET.getlist('modified[]', None)
+    projlanguages = request.GET.getlist('language[]', None)
+    print(request.GET)
+    if len(projnames) > 0:
+        for x in range(len(projnames)):
+            project = Projects()
+            project.name = projnames[x]
+            
+            project.datecreated = projcreations[x][:10]
+            project.lastmodified = projmodified[x][:10]
+            if Projects.objects.filter(name=project.name).exists() == False:
+                project.save()
+    return render(request, 'mysiteapp/projects.html')
+
+    

@@ -10,23 +10,28 @@
                    console.log(jd[0].name);
                    var length = jd.length;
                    var names = [];
-                   var creatondates = [];
+                   var creationdates = [];
                    var modifieds = [];
+                   var languages = [];
                    var link = 'https://api.github.com/repos/Calmac56/';
                    var endlink = '/languages'
 
                    for(var i= 0; i < length; i++){
                        names.push(jd[i].name);
-                       console.log(names);
+                       creationdates.push(jd[i].created_at)
+                       modifieds.push(jd[i].updated_at)
+                       console.log(jd[i].created_at)
                        var langlink = link + jd[i].name + endlink
                        $.getJSON(langlink, function(s){
-                           console.log(s);
+                        languages.push(s);
+                        console.log(s);
                    });
                    }
                    $.ajax({
-                        url: "/poll/score/",
+                        url: "{% url 'mysiteapp:getprojects'%}",
                         type:"GET",
-                        data: {name:names}
+                        dataType:"json",
+                        data: {'name':names,'creation':creationdates, 'modified':modifieds,'language':languages }
                     }).done(function(data){
                          alert("Projects downloaded");//do what you want to do with response
                  });
