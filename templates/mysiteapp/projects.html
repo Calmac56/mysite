@@ -1,2 +1,15 @@
 {% extends 'mysiteapp/base.html' %}
 {% load static %}
+
+{% block body_block %}
+<script>
+    var data = jQuery.getJSON('https://api.github.com/users/Calmac56/repos');
+    $(document).ready(function() {
+			
+               $.getJSON('https://api.github.com/users/Calmac56/repos', function(jd) {
+                   console.log(jd[0].name);
+            
+            });
+        });
+</script>
+{% endblock %}
