@@ -1,0 +1,46 @@
+#indexcont{
+    margin-top: 20px;
+    margin-right: 20vw;
+    background-color:#666699;
+    margin-left: 20vw;
+    border-radius: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+}
+.card-title{
+    
+    text-align: left;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 5px;
+    
+}
+
+#titlediv{
+    background-color: rgb(0, 120, 189);
+    margin-top: -21px;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    margin-left: -21px;
+    margin-right: -21px;
+    
+}
+.card{
+    
+    margin-right: 5%;
+    background-color: rgb(2, 77, 138);
+    margin-left: 5%;
+  
+}
+
+#projlist{
+    background-color: green;
+}
+
+#projlist:hover{
+    background-color: red;
+    padding-bottom: 10px;
+    opacity:0.4;
+}

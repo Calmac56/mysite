@@ -8,7 +8,9 @@ def index(request):
     return render(request, 'mysiteapp/index.html')
 
 def project(request):
-    return render(request, 'mysiteapp/projects.html')
+    context_dict = {}
+    context_dict['project'] = Projects.objects.all()
+    return render(request, 'mysiteapp/projects.html', context=context_dict)
 
 def getprojects(request):
     projnames = request.GET.getlist('name[]', None)

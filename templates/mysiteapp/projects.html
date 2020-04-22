@@ -1,8 +1,10 @@
 {% extends 'mysiteapp/base.html' %}
 {% load static %}
-
-{% block body_block %}
+{% block head_block %}
+<script type="text/javascript" src="{% static "js/projects.js"%}"></script>
+<link rel="stylesheet" href="{% static "css/projects.css"%}" type="text/css">
 <script>
+    
     var data = jQuery.getJSON('https://api.github.com/users/Calmac56/repos');
     $(document).ready(function() {
 			
@@ -19,7 +21,6 @@
                        names.push(jd[i].name);
                        creationdates.push(jd[i].created_at)
                        modifieds.push(jd[i].updated_at)
-                       console.log(jd[i].created_at)
                        var langlink = link + jd[i].name + endlink
                        $.getJSON(langlink, function(s){
                         languages.push(s);
@@ -36,5 +37,28 @@
                  });
             });
         });
+
 </script>
+{% endblock %}
+
+{% block body_block %}
+<div id="indexcont">
+    <div class="card">
+    <div class="card-body">
+        <div id="titlediv">
+        <h5 class="card-title">My Projects</h5>
+    </div>
+        {% if project %}
+        {% for theproject in project %}
+        <div id="projlist">
+            {{ theproject.name }}
+        </div>
+        <hr>
+
+        {% endfor %}
+        {% endif %}
+</div>
+</div>
+</div>
+
 {% endblock %}
