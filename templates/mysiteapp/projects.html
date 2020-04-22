@@ -14,6 +14,7 @@
                    var creationdates = [];
                    var modifieds = [];
                    var languages = [];
+                   var urls = [];
                    var link = 'https://api.github.com/repos/Calmac56/';
                    var endlink = '/languages'
 
@@ -21,6 +22,7 @@
                        names.push(jd[i].name);
                        creationdates.push(jd[i].created_at)
                        modifieds.push(jd[i].updated_at)
+                       urls.push(jd[i].html_url)
                        var langlink = link + jd[i].name + endlink
                        $.getJSON(langlink, function(s){
                         languages.push(s);
@@ -31,7 +33,7 @@
                         url: "{% url 'mysiteapp:getprojects'%}",
                         type:"GET",
                         dataType:"json",
-                        data: {'name':names,'creation':creationdates, 'modified':modifieds,'language':languages }
+                        data: {'name':names,'creation':creationdates, 'modified':modifieds,'language':languages, 'url':urls}
                     }).done(function(data){
                          alert("Projects downloaded");//do what you want to do with response
                  });
@@ -52,6 +54,9 @@
         {% for theproject in project %}
         <div id="projlist">
             {{ theproject.name }}
+            {{ theproject.datecreated }}
+            {{ theproject.lastmodified }}
+            {{ theproject.views }}
         </div>
         <hr>
 

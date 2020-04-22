@@ -14,3 +14,4 @@ class Projects(models.Model):
     lastmodified = models.DateField()
     views = models.IntegerField(default=0)
     languages = models.ForeignKey(Language, on_delete=models.CASCADE, blank=True, null= True)
+    url = models.CharField(max_length=200)
