@@ -3,44 +3,7 @@
 {% block head_block %}
 <script type="text/javascript" src="{% static "js/projects.js"%}"></script>
 <link rel="stylesheet" href="{% static "css/projects.css"%}" type="text/css">
-<script>
-    
-    var data = jQuery.getJSON('https://api.github.com/users/Calmac56/repos');
-    $(document).ready(function() {
-			
-               $.getJSON('https://api.github.com/users/Calmac56/repos', function(jd) {
-                   var length = jd.length;
-                   var names = [];
-                   var creationdates = [];
-                   var modifieds = [];
-                   var languages = [];
-                   var urls = [];
-                   var link = 'https://api.github.com/repos/Calmac56/';
-                   var endlink = '/languages'
 
-                   for(var i= 0; i < length; i++){
-                       names.push(jd[i].name);
-                       creationdates.push(jd[i].created_at)
-                       modifieds.push(jd[i].updated_at)
-                       urls.push(jd[i].html_url)
-                       var langlink = link + jd[i].name + endlink
-                       $.getJSON(langlink, function(s){
-                        languages.push(s);
-                        console.log(s);
-                   });
-                   }
-                   $.ajax({
-                        url: "{% url 'mysiteapp:getprojects'%}",
-                        type:"GET",
-                        dataType:"json",
-                        data: {'name':names,'creation':creationdates, 'modified':modifieds,'language':languages, 'url':urls}
-                    }).done(function(data){
-                         alert("Projects downloaded");//do what you want to do with response
-                 });
-            });
-        });
-
-</script>
 {% endblock %}
 
 {% block body_block %}
@@ -54,7 +17,8 @@
         {% for theproject in project %}
         <div id="projlist">
             <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }} </a></h>
-            <div id="projinfo"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
+            <div id="projinfo">{{ theproject.info }}</div>
+            <div id="projdata"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
                 {{ theproject.views }}</div>
             
             

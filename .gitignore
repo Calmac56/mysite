@@ -14,3 +14,11 @@ mysite/__pycache__/__init__.cpython-37.pyc
 mysite/__pycache__/settings.cpython-37.pyc
 mysiteapp/__pycache__/views.cpython-37.pyc
 mysiteapp/__pycache__/models.cpython-37.pyc
+mysite/__pycache__/urls.cpython-37.pyc
+mysiteapp/__pycache__/__init__.cpython-37.pyc
+mysiteapp/migrations/__pycache__/__init__.cpython-37.pyc
+mysiteapp/__pycache__/
+mysite/__pycache__/
+github.key
+mysiteapp/migrations/0003_auto_20200422_2334.py
+mysiteapp/migrations/
