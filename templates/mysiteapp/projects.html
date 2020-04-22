@@ -53,10 +53,11 @@
         {% if project %}
         {% for theproject in project %}
         <div id="projlist">
-            {{ theproject.name }}
-            {{ theproject.datecreated }}
-            {{ theproject.lastmodified }}
-            {{ theproject.views }}
+            <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }} </a></h>
+            <div id="projinfo"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
+                {{ theproject.views }}</div>
+            
+            
         </div>
         <hr>
 

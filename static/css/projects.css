@@ -36,11 +36,33 @@
 }
 
 #projlist{
-    background-color: green;
+    background-color: rgb(2, 84, 151);
 }
 
 #projlist:hover{
-    background-color: red;
+    background-color: rgb(2, 109, 197);
     padding-bottom: 10px;
-    opacity:0.4;
+
 }
+
+#projname{
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#projurl{
+    color: white;
+}
+
+#projurl:hover{
+    color:aqua;
+    text-decoration: none;
+}
+
+#projinfo{
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+
