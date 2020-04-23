@@ -17,9 +17,10 @@
         {% for theproject in project %}
         <div id="projlist">
             <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }} </a></h>
+            <i class="fab fa-{{ theproject.mainlanguage|lower }} fa-5x"></i>
             <div id="projinfo">{{ theproject.info }}</div>
             <div id="projdata"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
-                {{ theproject.views }}</div>
+                {{ theproject.views }} {{ theproject.mainlanguage }}</div>
             
             
         </div>

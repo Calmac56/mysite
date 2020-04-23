@@ -42,7 +42,7 @@ def get_projects(repos, session):
                 'stars' : int(repo['stargazers_count']),
                 'watchers' : int(repo['watchers_count'])
             }
-            print(theprojects)
+        
     return theprojects
 
 # cleans DB of projects which have been removed from the repoistory
@@ -54,18 +54,6 @@ def clean_projects(theprojects):
             project.delete()
 
 # gathers all languages used and returns a set
-def get_languages(theprojects):
-    languages = set()
-    for project in theprojects:
-        for lang in theprojects[project]['langs']:
-            languages.add(lang)
-    return languages
-
-# adds langauges to the database
-def add_languages(languages):
-    for language in languages:
-        Language.objects.get_or_create(name = language)[0].save()
-        print(f"-- Added {language}")
 
 # adds projects to the database (edits them if they already exist)
 def add_projects(theprojects):
@@ -77,7 +65,6 @@ def add_projects(theprojects):
         if not theprojects[project]['desc']:
             theprojects[project]['desc'] = "No description."
 
-        language = Language.objects.get_or_create(name = theprojects[project]['main_lang'])[0]
 
         project_obj = Projects.objects.get_or_create(projid = str(project))[0]
         project_obj.name = theprojects[project]['name']
@@ -85,21 +72,32 @@ def add_projects(theprojects):
         project_obj.url = theprojects[project]['url']
         project_obj.datecreated = theprojects[project]['date_c']
         project_obj.lastmodified = theprojects[project]['date_u']
-        project_obj.language = language
+        project_obj.mainlanguage = theprojects[project]['main_lang']
     
         project_obj.save()
 
         print(f"-- Added {theprojects[project]['name']}")
 
+
+def get_languages(theprojects):
+    languages = set()
+    for project in theprojects:
+        for lang in theprojects[project]['langs']:
+             language = Language()
+             language.name = lang
+             language.projects = Projects.objects.get(projid = project)
+             language.save()
+    print("Successfully added all project languages")
+
+
+
 # populates the database by running the two methods above
-def populate(languages, theprojects):
-    print("- Adding Languages to DB")
-    add_languages(languages)
-    print("- Finished Adding Languages")
+def populate(theprojects):
     print("- Adding Projects to DB")
     add_projects(theprojects)
     print("- Finished Adding Projects")
 
+    
 # main method running all the code
 def main():
     print("Starting script...")
@@ -109,8 +107,9 @@ def main():
     print("- Removing Deleted Projects")
     clean_projects(theprojects)
     print("- Finsihed Removing Deleted Projects")
+    populate(theprojects)
     languages = get_languages(theprojects)
-    populate(languages, theprojects)
+    
     print("Script finished.")
 
 if __name__ == '__main__':
