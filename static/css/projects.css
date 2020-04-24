@@ -41,7 +41,7 @@
 
 #projlist:hover{
     background-color: rgb(2, 109, 197);
-    padding-bottom: 10px;
+    padding: 10px;
 
 }
 
@@ -58,7 +58,14 @@
 #projurl:hover{
     color:aqua;
     text-decoration: none;
+    
 }
+#projurl:hover > #namelink{
+    color:aqua;
+    text-decoration: none;
+    
+}
+
 
 #projdata{
     color: white;
@@ -68,5 +75,21 @@
 
 i{
     float: left;
+    color: white;
+    margin-right: 10px;
+}
+
+
+#namelink{
+    float:none;
+    margin-left: 3px;
+}
+
+#namelink:hover{
+    color:aqua;
+}
+
+#projinfo{
+    color:white;
 }
 

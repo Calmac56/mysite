@@ -15,6 +15,7 @@ class Projects(models.Model):
     url = models.CharField(max_length=200)
     info = models.CharField(max_length=1000)
     mainlanguage = models.CharField(max_length=200)
+    projecticon = models.CharField(max_length=200, default='code')
 
 
 class Language(models.Model):

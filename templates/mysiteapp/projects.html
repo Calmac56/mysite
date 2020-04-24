@@ -16,8 +16,8 @@
         {% if project %}
         {% for theproject in project %}
         <div id="projlist">
-            <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }} </a></h>
-            <i class="fab fa-{{ theproject.mainlanguage|lower }} fa-5x"></i>
+            <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }}<i id="namelink" class="fas fa-external-link-alt"></i></a></h>
+            <i class="fab fa-{{ theproject.projecticon }} fa-5x"></i>
             <div id="projinfo">{{ theproject.info }}</div>
             <div id="projdata"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
                 {{ theproject.views }} {{ theproject.mainlanguage }}</div>

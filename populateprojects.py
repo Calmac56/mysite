@@ -73,7 +73,17 @@ def add_projects(theprojects):
         project_obj.datecreated = theprojects[project]['date_c']
         project_obj.lastmodified = theprojects[project]['date_u']
         project_obj.mainlanguage = theprojects[project]['main_lang']
-    
+        if theprojects[project]['main_lang'] == 'HTML':
+            project_obj.projecticon = 'html5'
+        elif theprojects[project]['main_lang'] == 'Python':
+            project_obj.projecticon = 'python'
+        elif theprojects[project]['main_lang'] == 'Java':
+            project_obj.projecticon = 'java'
+        else:
+            project_obj.projecticon = 'code'
+
+
+
         project_obj.save()
 
         print(f"-- Added {theprojects[project]['name']}")
