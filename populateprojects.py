@@ -77,13 +77,13 @@ def add_projects(theprojects):
         else:
             project_obj.mainlanguage = 'None'
         if theprojects[project]['main_lang'] == 'HTML':
-            project_obj.projecticon = 'html5'
+            project_obj.projecticon = 'fab fa-html5'
         elif theprojects[project]['main_lang'] == 'Python':
-            project_obj.projecticon = 'python'
+            project_obj.projecticon = 'fab fa-python'
         elif theprojects[project]['main_lang'] == 'Java':
-            project_obj.projecticon = 'java'
+            project_obj.projecticon = 'fab fa-java'
         else:
-            project_obj.projecticon = 'code'
+            project_obj.projecticon = 'fas fa-file-code'
 
 
 
