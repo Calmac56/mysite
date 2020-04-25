@@ -16,11 +16,11 @@
         {% if project %}
         {% for theproject in project %}
         <div id="projlist">
-            <h id="projname"><a id="projurl" href="{{ theproject.url }}"> {{ theproject.name }}<i id="namelink" class="fas fa-external-link-alt"></i></a></h>
-            <i class="fab fa-{{ theproject.projecticon }} fa-5x"></i>
+            <h id="projname"><a id="projurl" href="{% url 'mysiteapp:updateviews' theproject.projid %}" target="_blank"> {{ theproject.name }}<i id="namelink" class="fas fa-external-link-alt"></i></a></h>
+            <i class="fab fa-{{ theproject.projecticon }} fa-5x" data-toggle="tooltip" title="{{ theproject.mainlanguage }}"></i>
             <div id="projinfo">{{ theproject.info }}</div>
-            <div id="projdata"> {{ theproject.datecreated }} {{ theproject.lastmodified }}
-                {{ theproject.views }} {{ theproject.mainlanguage }}</div>
+            <div id="projdata"> Date created: {{ theproject.datecreated }} Last Modified: {{ theproject.lastmodified }}</div>
+                <div id="extrainfo"><i class="fas fa-eye" id="views" data-toggle="tooltip" title="Project views"></i>{{ theproject.views }}</div>
             
             
         </div>

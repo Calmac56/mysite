@@ -36,12 +36,14 @@
 }
 
 #projlist{
-    background-color: rgb(2, 84, 151);
+    background-color: rgb(2, 77, 138);
 }
 
 #projlist:hover{
     background-color: rgb(2, 109, 197);
     padding: 10px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
 
 }
 
@@ -80,9 +82,15 @@ i{
 }
 
 
-#namelink{
+#namelink {
     float:none;
     margin-left: 3px;
+}
+
+#views{
+    float:none;
+    margin-right: none;
+    padding:none;
 }
 
 #namelink:hover{
@@ -93,3 +101,8 @@ i{
     color:white;
 }
 
+
+#extrainfo{
+    color: white;
+    font-weight: bold;
+}

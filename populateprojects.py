@@ -72,7 +72,10 @@ def add_projects(theprojects):
         project_obj.url = theprojects[project]['url']
         project_obj.datecreated = theprojects[project]['date_c']
         project_obj.lastmodified = theprojects[project]['date_u']
-        project_obj.mainlanguage = theprojects[project]['main_lang']
+        if theprojects[project]['main_lang']:
+            project_obj.mainlanguage = theprojects[project]['main_lang']
+        else:
+            project_obj.mainlanguage = 'None'
         if theprojects[project]['main_lang'] == 'HTML':
             project_obj.projecticon = 'html5'
         elif theprojects[project]['main_lang'] == 'Python':
@@ -120,7 +123,8 @@ def main():
     populate(theprojects)
     languages = get_languages(theprojects)
     
-    print("Script finished.")
+    print("Script executed successfully")
+    print("Projects up to date")
 
 if __name__ == '__main__':
    main()
