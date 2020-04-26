@@ -12,8 +12,6 @@
 }
 #mepara{
   margin-left: 15%;
-  animation-name: slidein; 
-  animation-duration: 3s;
 }
 .card{
     margin-right: 5%;
@@ -103,14 +101,4 @@ p {
     font-weight: bold;
     
   }
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 80%; 
-    }
   
-    to {
-      margin-left: 15%;
-      width: 100%;
-    }
-  }
