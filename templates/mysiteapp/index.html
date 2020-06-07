@@ -35,12 +35,29 @@
         
         var options = {'title':'Programming languages that I have used',
                        'width': 800,
-                       'height':400};
+                       'height':400,
+                       'backgroundColor': '#024d8a',
+                       'titleTextStyle': {
+            color: 'white'
+        },
+        'legend' : { textStyle:{
+          color:'white'
+        },
+        alignment:'center'},
+        };
           
         var options2 = {'title':'Programming languages that I have used',
                        'width': 400,
-                       'height':300};
-        
+                       'height':300,
+                       'backgroundColor': '#024d8a',
+                       'titleTextStyle': {
+            color: 'white'
+        },
+        'legend' : { textStyle:{
+          color:'white'
+        },
+        alignment:'center'},
+        };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
