@@ -11,16 +11,23 @@
 
     var data = google.visualization.arrayToDataTable([
         ['Programming Language', 'Amount used'],
-        ['Java',     11],
-        ['HTML',      2],
-        ['C',  2],
-        ['Python', 2],
-        ['CSS',    7]
+        ['Python',     10],
+        ['HTML',      2.75],
+        ['C',  1.5],
+        ['CSS', 2.75],
+        ['Java',    7]
       ]);
 
 
     var options = {
-      
+      backgroundColor: '#024d8a',
+      tooltip: {
+            text: 'percentage'
+        },
+        chartArea:{left:0,top:0,width:"100%",height:"100%"},
+
+        textStyle:{color: '#FFFFFF'},
+        legend:{textStyle:{color:'white', fontSize:'15'}, alignment:'center'},
 
     };
 
@@ -28,6 +35,7 @@
     var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
 
     chart2.draw(data, options);
+
 
   }
 
@@ -38,32 +46,9 @@
 
 <script>
 $(window).resize(function() {
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart2);
+    
 
-    function drawChart2() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['Programming Language', 'Amount used'],
-        ['Java',     11],
-        ['HTML',      2],
-        ['C',  2],
-        ['Python', 2],
-        ['CSS',    7]
-      ]);
-
-      var options = {
-        
-        
-      };
-
-
-      var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-      chart2.draw(data, options);
-
-    }
-
+    drawChart2()
    
 
 
