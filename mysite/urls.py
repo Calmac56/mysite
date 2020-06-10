@@ -18,6 +18,8 @@ from django.urls import path
 from django.urls import include
 from mysiteapp import views
 
+handler404 = views.error404
+handler500 = views.error500
 urlpatterns = [
     path('', views.index, name='index'),
     path('me/', include('mysiteapp.urls')),
