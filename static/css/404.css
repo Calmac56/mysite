@@ -290,13 +290,8 @@
        }
    }
     
-   #indexcont{
-    margin-top: 20px;
-    margin-right: 20vw;
-    background-color:#666699;
-    margin-left: 20vw;
-    border-radius: 25px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    
-}
+   @media screen and (max-width: 600px) {
+       .box{
+           margin-top: 30px;
+       }
+   }
