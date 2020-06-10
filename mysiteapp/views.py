@@ -15,6 +15,12 @@ def project(request):
 def portfolio(request):
     return render(request, 'mysiteapp/portfolio.html')
 
+def error404(request,exception):
+    return render(request, 'mysiteapp/404.html')
+
+def error500(request):
+    return render(request, 'mysiteapp/404.html')
+
 def updateviews(request,projid):
 
     currentviews = Projects.objects.get(projid=projid).views

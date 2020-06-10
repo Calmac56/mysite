@@ -1,0 +1,64 @@
+{% extends 'mysiteapp/base.html' %}
+{% load static %}
+{% block head_block %}
+<link rel="stylesheet" href="{% static "css/404.css"%}" type="text/css">
+
+{% endblock %}
+{% block body_block %}
+<script>
+    var pageX = $(document).width();
+    var pageY = $(document).height();
+    var mouseY=0;
+    var mouseX=0;
+    
+    $(document).mousemove(function( event ) {
+      //verticalAxis
+      mouseY = event.pageY;
+      yAxis = (pageY/2-mouseY)/pageY*300; 
+      //horizontalAxis
+      mouseX = event.pageX / -pageX;
+      xAxis = -mouseX * 100 - 100;
+    
+      $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
+    
+      //console.log('X: ' + xAxis);
+    
+    });
+    </script>
+<div class="box">
+    <div class="box__ghost">
+      <div class="symbol"></div>
+      <div class="symbol"></div>
+      <div class="symbol"></div>
+      <div class="symbol"></div>
+      <div class="symbol"></div>
+      <div class="symbol"></div>
+      
+      <div class="box__ghost-container">
+        <div class="box__ghost-eyes">
+          <div class="box__eye-left"></div>
+          <div class="box__eye-right"></div>
+        </div>
+        <div class="box__ghost-bottom">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="box__ghost-shadow"></div>
+    </div>
+    
+    <div class="box__description">
+      <div class="box__description-container">
+        <div class="box__description-title">Whoops!</div>
+        <div class="box__description-text">The page you are looking for doesnt exist yet...</div>
+      </div>
+      
+      <a href="/" target="_blank" class="box__button">Get me out of here</a>
+      
+    </div>
+    
+  </div>
+{% endblock %}
