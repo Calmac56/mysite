@@ -28,7 +28,7 @@ SECRET_KEY = '3%g(eutte(&4l81(fs$i0fj$21ja&(4rcjolf@2b^x7kd5j^n0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['calummacphee.pythonanywhere.com']
 
 
 # Application definition
